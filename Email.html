@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/email.css" />
+</head>
+<body>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>If you have any questions or partnership inquiries, fill in the fields below and click “Send Email”.</p>
+
+    <div class="form-group">
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="Enter email subject" />
+    </div>
+
+    <div class="form-group">
+      <label for="body">Message</label>
+      <textarea id="body" rows="6" placeholder="Enter your message"></textarea>
+    </div>
+
+    <button id="sendBtn" class="btn">Send Email</button>
+  </div>
+
+  <script>
+    document.getElementById('sendBtn').addEventListener('click', function() {
+    //   var to = 'nureldinmohamed@college.harvard.edu';  
+      var to = 'yuzhench@umich.edu';  
+      var subject = encodeURIComponent(document.getElementById('subject').value);
+      var body = encodeURIComponent(document.getElementById('body').value);
+      location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
