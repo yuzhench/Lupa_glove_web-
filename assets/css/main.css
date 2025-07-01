@@ -2373,6 +2373,22 @@ input, select, textarea {
 }
 
 
+.lupa_logo_corner {
+  position: fixed;       /* 相对于视口固定 */
+  top: 1rem;             /* 离顶部 1rem，可根据需要调 */
+  left: 1rem;            /* 离左侧 1rem，可根据需要调 */
+  width: 5em;
+  height: 5em;
+  background: url("images/Logo.png") no-repeat center/contain;
+  z-index: 1000;         /* 确保它在最前面 */
+}
+
+
+
+
+
+
+
 
 /* Image */
 
@@ -2477,6 +2493,7 @@ input, select, textarea {
 			vertical-align: middle;
 		}
 
+		/* original version  */
 		ul.actions.special {
 			-moz-justify-content: center;
 			-webkit-justify-content: center;
@@ -2484,12 +2501,56 @@ input, select, textarea {
 			justify-content: center;
 			width: 100%;
 			margin-left: 0;
+
+			padding-left: 0;
+			
+		} 
+
+
+
+		/* ul.actions.special_2 {
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			width: 100%;
+			margin-left: 0;
+
+			padding-left: 0;
+			
+		}  */
+
+		
+		/* currently worked for header */
+		ul.actions.special_header {
+			display: flex;
+			justify-content: space-between;  /* 两端对齐 */
+			margin-left: 0;
+			padding-left: 0;
+			gap: 5rem;
 		}
 
+		/* 2. 每个按钮容器占一半宽度 */
+		ul.actions.special_header li {
+			width: 50%;
+			padding: 0;        /* 取消通用的 padding 左侧 */
+			list-style: none;
+		}
+
+
+			/* service for the original version */
 			ul.actions.special li:first-child {
 				padding-left: 0;
 			}
 
+		/* 3. 左按钮靠右、右按钮靠左 */
+		ul.actions.special_header li:first-child {
+			text-align: right;
+		}
+
+		ul.actions.special_header li:last-child {
+			text-align: left;
+		}
 		ul.actions.stacked {
 			-moz-flex-direction: column;
 			-webkit-flex-direction: column;
