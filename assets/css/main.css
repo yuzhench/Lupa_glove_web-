@@ -2507,6 +2507,23 @@ input, select, textarea {
 		} 
 
 
+	/* 1. 确保这个规则写在模板 CSS 之后，或者加上更高的优先级 */
+		ul.actions.special_flexbox {
+			display: flex !important;          /* 变成弹性布局 */
+			flex-direction: column !important; /* 从上到下排列 */
+			align-items: center;               /* 子项水平居中（可选） */
+			gap: 1.5em;                          /* 项目间距 */
+		}
+
+		/* 2. 把每个 li 恢复成块级，避免 inline-block 干扰 */
+		ul.actions.special_flexbox li {
+			display: block !important;
+			width: 100%;       /* 或者你希望的按钮宽度 */
+			margin: 0;         /* 清除模板里给的 margin/padding */
+		}
+
+		
+	
 
 		/* ul.actions.special_2 {
 			-moz-justify-content: center;
@@ -2644,24 +2661,60 @@ input, select, textarea {
 
 /* Icons */
 
-	ul.icons {
+	/* ul.icons {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		text-align: right;
 	}
 
 		ul.icons li {
 			display: inline-block;
-			padding: 0 1.25em 0 0;
+			padding: 0 1.5em 0 0;
 		}
 
 			ul.icons li:last-child {
-				padding-right: 0;
+				padding-right: 2.5em;
 			}
 
 			ul.icons li .icon:before {
 				font-size: 1.5em;
-			}
+			} */
+
+
+
+
+	ul.icons {
+		cursor: default;
+		list-style: none;
+		padding: 0;               /* 我们把 padding-left/right 放到 li 上 */
+		margin: 0;
+		width: 100%;              /* 确保它撑满父容器 */
+	}
+
+	ul.icons li {
+		display: flex;            /* 1. 变成弹性盒子 */
+		justify-content: space-between; /* 子元素一头一尾 */
+		align-items: center;      /* 垂直居中 */
+		padding: 0 2.5em;         /* 整体左右内边距，可调 */
+		margin: 0;                 /* 清除默认外边距 */
+	}
+
+	ul.icons li .footer-note {
+		margin: 0;                /* 清除 p 的默认上下外边距 */
+		font-size: 1.5em;        /* 缩小字体 */
+		color: #aaa;              /* 根据背景调整 */
+	}
+
+	ul.icons li a.icon:before {
+		font-size: 2em;         /* 保留你原来的图标大小 */
+	}
+
+
+
+
+
+
 
 /* Major Icons */
 
@@ -3210,11 +3263,12 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 6em 0 6em 0 ;
-		background-color: #4686a0;
+		padding: 2em 0 2em 0 ;
+		/* background-color: #4686a0; */
+		background-color: #000000;
 		color: rgba(255, 255, 255, 0.75);
 		background-attachment: fixed,							fixed,							fixed;
-		background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%);
+		/* background-image: url("images/overlay2.png"), url("images/overlay4.svg"), linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%); */
 		background-position: top left,						center center,					center center;
 		background-size: auto,							cover,							cover;
 		text-align: center;
@@ -3921,4 +3975,338 @@ section#contact .section-heading {
 .img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+
+
+/* open-roles section */
+.open-roles {
+  /* background: #000; */
+  color: #fff;
+  /* padding: 4rem; */
+  text-align: left;
+}
+
+
+/* 给所有的 open-roles section 底部加一些空隙 */
+.open-roles {
+  margin-bottom: 5rem;    /* 你可以根据设计调整数值 */
+}
+
+
+.open-roles h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.open-roles p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* 核心：把箭头用 ::after 加上 */
+.contact-link {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+   border-bottom: none;
+  /* 如果想要 hover 时加下划线，可加这一行 */
+  /* transition: color 0.2s; */
+}
+
+.contact-link::after {
+  content: '↗';             /* 箭头符号 */
+  display: inline-block;
+  margin-left: 0.5em;       /* 文字和箭头之间的距离 */
+  font-size: 1.5em;         /* 箭头略大一些 */
+  color: #e91e63;           /* 箭头颜色，可换成任何你想要的 accent color */
+  transition: transform 0.2s; /* 可选：加个小动画 */
+}
+
+/* 可选：hover 效果，让箭头动一动 */
+.contact-link:hover::after {
+  transform: translate(2px, -2px);
+}
+
+
+
+
+
+/* role-item section */
+.roles-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 每条横线条目 */
+.role-item {
+  display: flex;                    /* 水平一排 */
+  justify-content: space-between;   /* 左文 右图 */
+  align-items: center;              /* 垂直居中 */
+  padding: 2rem 0;                /* 上下间距 */
+  border-bottom: 3px solid rgba(255,255,255,0.2);
+}
+
+/* 最后一项去掉底边线 */
+/* .role-item:last-child {
+  border-bottom: none;
+} */
+
+/* 标题文字 */
+.role-name {
+  font-size: 3rem;      /* 大小可调 */
+  color: #fff;
+}
+.role-name .role-count {
+  font-size: 1rem;      /* 小数字 */
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+/* 圆形加号按钮 */
+.expand-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e91e63;      /* 粉色边框 */
+  border-radius: 50%;
+  background: transparent;
+  color: #e91e63;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+
+/* hover/active 效果 */
+.expand-btn:hover {
+  background-color: #e91e63;
+  color: #fff;
+}
+
+
+
+
+
+
+/* button-color */
+.gradient-circle {
+  --size: 3rem; /* 控制整体大小 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  padding: 0;
+  border: 2px solid transparent;            /* 先给个透明边框占位 */
+  border-radius: 50%;                       /* 圆形 */
+  background-clip: padding-box;             /* 防止背景色溢到边框 */
+  position: relative;
+  cursor: pointer;
+}
+.gradient-circle::before {
+  content: "";
+  position: absolute;
+  top: -2px; bottom: -2px; left: -2px; right: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    45deg,
+    #ff0080 0%,
+    #ff8c00 50%,
+    #ffee00 100%
+  );
+  z-index: -1;
+}
+.gradient-circle i {
+  color: #fff;      /* 或者你想要的加号颜色 */
+  font-size: 1.2rem;
+}
+
+
+
+
+
+  /* Modal 样式，默认隐藏 */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 10000;
+    }
+    /* 黑色半透明遮罩 */
+    .modal .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    /* 弹窗对话框 */
+    .modal .dialog {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 6px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+    .modal .dialog h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+    .modal .close-btn {
+      position: absolute;
+      top: 0.5rem; right: 0.75rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #666;
+    }
+    .modal .form-group {
+      margin-bottom: 1rem;
+    }
+    .modal label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: bold;
+    }
+    .modal input,
+    .modal textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .modal .send-btn {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.6rem;
+      background: #007bff;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .modal .send-btn:hover {
+      background: #0056b3;
+    }
+
+
+
+
+	/* submenu css section  */
+	/* 1. 让 role-item 成为定位上下文 */
+.role-item {
+  position: relative;
+}
+
+/* 2. 包裹按钮和菜单的容器（可选，也可直接放在 .role-item） */
+.submenu-container {
+  display: inline-block;   /* 和按钮宽度一致 */
+  position: relative;
+}
+
+/* 3. 隐藏的子菜单 */
+.submenu {
+  display: none; /* 默认不显示 */
+  position: absolute;
+  top: 100%;     /* 紧贴按钮下方 */
+  right: 0;      /* 右对齐按钮的右侧 */
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  min-width: 500px;
+  z-index: 50;
+}
+
+/* 4. 子菜单项样式 */
+.submenu li {
+  padding: 0;
+}
+.submenu li + li {
+  margin-top: 0.25rem;
+}
+.submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.submenu a:hover {
+  /* background: #34495e;  */
+  color: #333 !important;
+  font-size: 1.2rem !important;
+
+}
+
+/* 5. 悬停时显示子菜单 */
+.submenu-container:hover .submenu {
+  display: block;
+}
+
+
+
+/* submenu small words discribe-------------------------- */
+/* 外层条目上下文 */
+.submenu-role-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* 职位标题链接 */
+.submenu-role-link {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: font-size 0.2s ease;
+}
+
+/* 详情文字，默认为隐藏 */
+/* .submenu-role-detail {
+  display: none;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.4;
+  transition: opacity 0.2s ease;
+} */
+
+
+.submenu-role-detail {
+  display: none;
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: rgba(0,0,0,0.75);
+  line-height: 1.4;
+  transition: opacity 0.2s ease;
+}
+
+/* 悬停时：放大标题、显示详情 */
+.submenu-role-item:hover .submenu-role-link {
+  font-size: 1.2rem;
+}
+
+.submenu-role-item:hover .submenu-role-detail {
+  display: block;
+  opacity: 1;
 }

@@ -1,80 +1,79 @@
-/* email.css */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* 整体隐藏 Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1000;
 }
 
-html, body {
-  height: 100%;
+/* 半透明遮罩 */
+.modal-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f2f5;
-  font-family: Arial, sans-serif;
-}
-
-.contact-container {
+/* 弹窗白色主体，居中显示 */
+.modal-container {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   max-width: 500px;
-  width: 100%;
-  margin: 2rem;
-  padding: 2rem;
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: left;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
-.contact-container h1 {
-  margin-bottom: 1rem;
-  color: #333;
-  text-align: center;
+/* 头部：标题 + 关闭按钮 */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+.modal-close {
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.contact-container p {
-  margin-bottom: 1.5rem;
-  color: #555;
-  line-height: 1.5;
+/* 主体：表单区 */
+.modal-body {
+  padding: 1rem;
 }
-
 .form-group {
   margin-bottom: 1rem;
 }
-
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #333;
 }
-
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-  text-align: center;
+/* 底部：发送按钮 */
+.modal-footer {
+  padding: 1rem;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+.modal-footer .btn {
+  padding: 0.5rem 1rem;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+/* 当你想让页面文字不可选或滚动时，再加上下面两行 */
+/*
+html.modal-open {
+  overflow: hidden;
 }
+*/
