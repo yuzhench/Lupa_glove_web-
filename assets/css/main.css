@@ -4046,10 +4046,28 @@ section#contact .section-heading {
 /* 每条横线条目 */
 .role-item {
   display: flex;                    /* 水平一排 */
-  justify-content: space-between;   /* 左文 右图 */
+  /* justify-content: space-between;     */
   align-items: center;              /* 垂直居中 */
   padding: 2rem 0;                /* 上下间距 */
   border-bottom: 3px solid rgba(255,255,255,0.2);
+  flex-direction:column;
+}
+
+.role-item .role-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%; 
+}
+
+.role-item .role-description{
+	margin: 0.5rem 0 0;
+	font-size: 0.9rem;
+	color: rgba(255,255,255,0.75);
+	line-height: 1.4;
+	align-self: flex-start;
+	text-align: left;
+	width: 80%;
 }
 
 /* 最后一项去掉底边线 */
