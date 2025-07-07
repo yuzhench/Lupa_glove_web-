@@ -4053,6 +4053,16 @@ section#contact .section-heading {
   flex-direction:column;
 }
 
+.role-item-row {
+  display: flex;                    /* 水平一排 */
+  justify-content: space-between;    
+  align-items: center;              /* 垂直居中 */
+  padding: 2rem 0;                /* 上下间距 */
+  border-bottom: 3px solid rgba(255,255,255,0.2);
+  flex-direction:row;
+}
+
+
 .role-item .role-header {
 	display: flex;
 	justify-content: space-between;
@@ -4067,7 +4077,38 @@ section#contact .section-heading {
 	line-height: 1.4;
 	align-self: flex-start;
 	text-align: left;
-	width: 80%;
+	width: 100%;
+}
+
+.role-item .role-description ul {
+  display: flex;
+  flex-direction: column;  /* 纵向排列 */
+  gap: 1rem;               /* 子项之间统一 1rem 间距 */
+  padding-left: 1.5rem;    /* 留出圆点缩进 */
+  margin: 0;               /* 取消 ul 默认的上下外边距 */
+  list-style: none;        /* 先去掉内置圆点 */
+}
+
+
+.role-item .role-description ul li{
+	margin: 2.5rem 0 0;
+	font-size: 1.6rem;
+	color: rgba(255,255,255,0.75);
+	line-height: 1.4;
+	list-style-type: disc; 
+	list-style-position: outside;
+	margin-left: 1.5rem;  
+ 
+}
+
+.job-bg-dis {
+	margin: 2.5rem 0 0;
+	font-size: 1.8rem;
+	color: rgba(255,255,255,0.75);
+	line-height: 1.4;
+	align-self: flex-start;
+	text-align: left;
+	width: 100%;
 }
 
 /* 最后一项去掉底边线 */
@@ -4080,7 +4121,26 @@ section#contact .section-heading {
   font-size: 3rem;      /* 大小可调 */
   color: #fff;
 }
+
+
+.job-name-title {
+  font-size: 4rem;      /* 大小可调 */
+  color: #fff;
+}
+
+
+.role-name-job {
+  font-size: 2rem;      /* 大小可调 */
+  color: #fff;
+}
 .role-name .role-count {
+  font-size: 1rem;      /* 小数字 */
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+
+.role-name-job .role-count {
   font-size: 1rem;      /* 小数字 */
   color: #888;
   margin-left: 0.5rem;
@@ -4327,4 +4387,77 @@ section#contact .section-heading {
 .submenu-role-item:hover .submenu-role-detail {
   display: block;
   opacity: 1;
+}
+
+
+
+/* 如果放到单独的 apply.css，先在 <head> 中： 
+<link rel="stylesheet" href="../assets/css/apply.css" />
+*/
+
+.application-form {
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;   /* 上方空 4rem */
+  margin-bottom: 2rem;/* 下方空 2rem */
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.application-form h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.application-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.application-form .form-group label {
+  margin-top: 2rem;
+  display: block;
+  /* font-weight: bold; */
+  margin-bottom: 0.25rem;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.6);
+  text-align: left;
+  margin-bottom: 1rem;
+
+}
+
+.application-form .form-group input,
+.application-form .form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent; 
+}
+
+.application-form .form-group textarea {
+  min-height: 100px;
+}
+
+.application-form button[type="submit"] {
+  display: block;
+  width: 30%;
+  padding: 0.75rem;
+  font-size: 1.8rem;
+  background: rgba(255,255,255,0.9);
+  color: #000 !important;  
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 3rem auto 0; 
+ 
+
+}
+
+.application-form button[type="submit"]:hover {
+  background: #0056b3;
 }
