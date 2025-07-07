@@ -4461,3 +4461,82 @@ section#contact .section-heading {
 .application-form button[type="submit"]:hover {
   background: #0056b3;
 }
+
+
+
+
+
+
+/* 1. 重置 ul 的默认内外边距，去掉圆点 */
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;        /* 横向排列菜单项 */
+  gap: 2rem;            /* 菜单链接之间的间距 */
+}
+
+/* 2. 整体 header 样式 */
+.site-header {
+  background-color: #000;    /* 你的深色背景 */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+
+
+/* 用和其它 section 相同的 .inner 宽度 & 布局 */
+.site-header .inner {
+  max-width: 60em;           /* 跟你其它 .inner 一致 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;          /* 你想要的上下/左右间距 */
+}
+
+
+.site-header a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+
+.site-header .site-nav a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+ 
+
+/* 4. Logo 大小 */
+.site-logo img {
+  height: 3rem;            /* 或者你想要的高度 */
+  width: auto;
+}
+
+/* 5. 菜单链接样式 */
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity .2s;
+  
+}
+.site-nav a:hover {
+  opacity: 0.7;
+}
+
+/* 6. 响应式（小屏时切成汉堡或垂直菜单，这里只是示意） */
+@media (max-width: 768px) {
+  .site-header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .site-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
