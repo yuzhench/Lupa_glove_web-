@@ -98,7 +98,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #666;
+		color: #fff;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
@@ -121,7 +121,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #555;
+		color: #fff;
 		font-weight: 400;
 	}
 
@@ -134,7 +134,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #555;
+		color: #fff;
 		line-height: 1em;
 		margin: 0 0 1em 0;
 	}
@@ -241,7 +241,7 @@ input, select, textarea {
 
 /* Container */
 
-	/* .container {
+	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 4em);
 		width: 60em;
@@ -286,31 +286,31 @@ input, select, textarea {
 				max-width: calc(100% - 3em);
 			}
 
-		} */
+		}
 
 
-
+/* 
 	.container {
-		/* 1. 去掉固定宽度，直接用流体宽度 */
+ 
 		width: 100%;
 		max-width: none;
 
-		/* 2. 保留左右 padding */
+ 
 		padding-left: 2em;
 		padding-right: 2em;
 
-		/* 3. 如果想保留上下居中或上下边距，可选留白 */
+ 
 		margin: 0 auto;
-		box-sizing: border-box;  /* 确保 padding 不会再额外撑宽度 */
+		box-sizing: border-box;   
 		}
 
-		/* 在手机上可以缩小两侧留白 */
+		 
 		@media screen and (max-width: 480px) {
 		.container {
 			padding-left: 1em;
 			padding-right: 1em;
 		}
-	}
+	} */
 
 
 /* Row */
@@ -2982,7 +2982,7 @@ input, select, textarea {
 	}
 
 		.main.style1 {
-			background: #fff;
+			background: #000;
 		}
 
 		.main.style2 {
@@ -3089,7 +3089,7 @@ input, select, textarea {
 	} */
 
 
-	#header {
+	/* #header {
 		padding: 9em 0 9em 0 ;
 		background-color: #4686a0;
 		color: rgba(255, 255, 255, 0.75);
@@ -3101,7 +3101,24 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 		background-repeat: no-repeat;
+	} */
+
+
+	#header {
+		/* 原来的图片和渐变都去掉 */
+		background-image: none !important;
+
+		/* 背景色设为纯黑 */
+		background-color: #000;
+
+		/* 其余保留你想要的内边距、文字居中等 */
+		padding: 9em 0;
+		color: rgba(255, 255, 255, 0.75);
+		text-align: center;
+		position: relative;
+		overflow: hidden;
 	}
+
 
 
 		#header a {
@@ -4062,19 +4079,32 @@ section#contact .section-heading {
 
 
 /* role-item section */
-.roles-list {
+/* .roles-list {
   list-style: none;
   margin: 0;
   padding: 0;
+} */
+
+.roles-list > .role-item {
+  border-top:    3px solid rgba(255,255,255,0.2);
+  border-bottom: 3px solid rgba(255,255,255,0.2);
+  padding: 0;           /* 内边距交给 header + description 自己管 */
+  display: flex;
+  flex-direction: column;
+}
+.roles-list > .role-item:not(:first-child) {
+  border-top: none;
 }
 
+
+.roles-list .role-item:first-child {
+	border-top: 3px solid rgba(255,255,255,0.2);
+}
 /* 每条横线条目 */
 .role-item {
-  display: flex;                    /* 水平一排 */
-  /* justify-content: space-between;     */
+  display: flex;             
   align-items: center;              /* 垂直居中 */
-  padding: 2rem 0;                /* 上下间距 */
-  border-bottom: 3px solid rgba(255,255,255,0.2);
+  padding: 0;               
   flex-direction:column;
 }
 
@@ -4093,17 +4123,32 @@ section#contact .section-heading {
 	justify-content: space-between;
 	align-items: center;
 	width: 100%; 
+
+	padding: 2rem 0;
+ 
 }
 
-.role-item .role-description{
-	margin: 2.5rem 0 0;
+.role-item .role-description.word-hide{
+	margin: 0; 
 	font-size: 1.2rem;
 	color: rgba(255,255,255,0.75);
 	line-height: 1.4;
 	align-self: flex-start;
 	text-align: left;
 	width: 100%;
+	max-height: 0;
+  	overflow: hidden;
+	margin-left: 0 !important;
+    padding-left: 0 !important;
+	transition: max-height 0.3s ease,    /* 高度过渡 */
+              padding    0.3s ease;    /* 内边距过渡 */
 }
+.role-item.expanded .role-description.word-hide {
+  max-height: 500px;   /* 或者 auto + JS 动态测算 */
+  padding: 0.5em 1em;  /* 恢复上下留白 */
+  margin: 1rem 0 0;
+}
+
 
 .role-item .role-description ul {
   display: flex;
@@ -4112,7 +4157,7 @@ section#contact .section-heading {
   padding-left: 1.5rem;    /* 留出圆点缩进 */
   margin: 0;               /* 取消 ul 默认的上下外边距 */
   list-style: none;        /* 先去掉内置圆点 */
-}
+}  
 
 
 .role-item .role-description ul li{
@@ -4125,6 +4170,12 @@ section#contact .section-heading {
 	margin-left: 1.5rem;  
  
 }
+
+ 
+
+
+
+
 
 .job-bg-dis {
 	margin: 2.5rem 0 0;
@@ -4503,6 +4554,13 @@ section#contact .section-heading {
 
 /* 2. 整体 header 样式 */
 .site-header {
+
+  position: sticky;      /* 固定定位 */
+  top: 0;               /* 距离视口顶端 0 */
+  left: 0;              /* 距离视口左侧 0 */
+  width: 100%;          /* 拉满整个宽度 */
+  z-index: 1000;        /* 保证叠在其他内容之上 */
+
   background-color: #000;    /* 你的深色背景 */
   color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -4545,7 +4603,7 @@ section#contact .section-heading {
 .site-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   transition: opacity .2s;
   
@@ -4567,5 +4625,52 @@ section#contact .section-heading {
 }
 
 
+/* 目录整体 */
+#toc {
+  position: sticky;   /* 吸顶效果 */
+  top: 6rem;          /* 距离视口顶端 2rem */
+  margin-left: auto;  /* 推到右侧 */
+  padding: 1rem;
+  background: rgba(0,0,0,1);
+  border-left: 1px solid #ddd;
+  width: 80%;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  font-family: sans-serif;
+  font-size: 1rem;
+   text-align: left;
+}
+/* 目录列表 */
+#toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+#toc li + li {
+  margin-top: 0.5rem;
+}
+/* 链接默认样式 */
+#toc a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s, font-weight 0.2s;
+  display: block;
+}
+/* 高亮（当前）状态 */
+#toc a.active {
+  font-weight: bold;
+  color: #000;
+}
 
 
+/* 覆盖掉所有可能在侧边栏或列表上加的左边框 */
+aside,
+.roles-list,
+.site-nav ul {
+  border-left: none !important;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
