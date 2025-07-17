@@ -4152,6 +4152,18 @@ section#contact .section-heading {
 	transition: max-height 0.3s ease,    /* 高度过渡 */
               padding    0.3s ease;    /* 内边距过渡 */
 }
+
+.role-item .role-description.word-show{
+	margin: 0; 
+	font-size: 1.2rem;
+	color: rgba(255,255,255,0.75);
+	line-height: 1.4;
+	align-self: flex-start;
+	text-align: left;
+	width: 100%;
+}
+
+
 .role-item.expanded .role-description.word-hide {
   max-height: 500px;   /* 或者 auto + JS 动态测算 */
   padding: 0.5em 1em;  /* 恢复上下留白 */
@@ -4186,7 +4198,7 @@ section#contact .section-heading {
 
 /* for each job discription file */
 .role-item .role-description-one-job{
-	margin: 2.5rem 0 0;
+	margin: 0;
 	font-size: 1.2rem;
 	color: rgba(255,255,255,0.75);
 	line-height: 1.4;
@@ -4222,7 +4234,7 @@ section#contact .section-heading {
 
 
 .job-bg-dis {
-	margin: 2.5rem 0 0;
+	margin: 2.5rem 0 2.5rem;
 	font-size: 1.8rem;
 	color: rgba(255,255,255,0.75);
 	line-height: 1.4;
@@ -4244,7 +4256,7 @@ section#contact .section-heading {
 
 
 .job-name-title {
-  font-size: 4rem;      /* 大小可调 */
+  font-size: 3rem;      /* 大小可调 */
   color: #fff;
 }
 
@@ -4564,7 +4576,9 @@ section#contact .section-heading {
 }
 
 .application-form button[type="submit"] {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 30%;
   padding: 0.75rem;
   font-size: 1.8rem;
