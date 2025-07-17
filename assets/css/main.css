@@ -4128,6 +4128,15 @@ section#contact .section-heading {
  
 }
 
+
+.role-item .role-header .role-name{
+	flex: 1 1 auto;
+	white-space: normal;
+	overflow: break-word;
+	text-align: left;
+	line-height: 1.4;
+}
+
 .role-item .role-description.word-hide{
 	margin: 0; 
 	font-size: 1.2rem;
@@ -4171,6 +4180,41 @@ section#contact .section-heading {
  
 }
 
+
+
+
+
+/* for each job discription file */
+.role-item .role-description-one-job{
+	margin: 2.5rem 0 0;
+	font-size: 1.2rem;
+	color: rgba(255,255,255,0.75);
+	line-height: 1.4;
+	align-self: flex-start;
+	text-align: left;
+	width: 100%;
+}
+
+.role-item .role-description-one-jon ul {
+  display: flex;
+  flex-direction: column;  /* 纵向排列 */
+  gap: 1rem;               /* 子项之间统一 1rem 间距 */
+  padding-left: 1.5rem;    /* 留出圆点缩进 */
+  margin: 0;               /* 取消 ul 默认的上下外边距 */
+  list-style: none;        /* 先去掉内置圆点 */
+}
+
+
+.role-item .role-description-one-job ul li{
+	margin: 2.5rem 0 0;
+	font-size: 1.6rem;
+	color: rgba(255,255,255,0.75);
+	line-height: 1.4;
+	list-style-type: disc; 
+	list-style-position: outside;
+	margin-left: 1.5rem;  
+ 
+}
  
 
 
@@ -4673,4 +4717,75 @@ aside,
 
 [id] {
   scroll-margin-top: 100px;
+}
+
+
+
+
+.job-submenu{
+	list-style: none;
+	margin: 0;
+	padding: 0; 
+}
+
+
+.role-item .role-description .job-submenu  {
+	padding-left: 0;
+	margin: 0;
+}
+
+
+.role-item .role-description .job-submenu  li{
+	padding-left: 0;
+	margin: 0;
+}
+
+.job-submenu li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 0; 
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+
+}
+
+.job-submenu li:first-child{
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.job-submenu li:last-child{
+	border-bottom: none;
+}
+
+.job-location{
+	flex: 0, 0, auto;
+	margin-right: 2rem;
+	font-size: 0.9rem;
+	color: rgba(255,255,255,0.6)
+
+}
+
+.job-title {
+	flex: 1;
+	font-size: 1.4rem;
+	color: rgba(255,255,255,0.9);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 2rem;
+}
+
+.apply-link{
+	flex: 0 0 auto;
+	font-size: 1.0rem;
+	color: #fff;
+	text-decoration: none !important;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.apply-link:hover i {
+  transform: translateX(3px);
+  transition: transform 0.2s ease-in-out;
 }
