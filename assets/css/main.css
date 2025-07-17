@@ -2985,6 +2985,10 @@ input, select, textarea {
 			background: #000;
 		}
 
+		.main.style1-white {
+			background: #fff;
+		}
+
 		.main.style2 {
 			background-color: #333;
 			color: rgba(255, 255, 255, 0.75);
@@ -4055,7 +4059,7 @@ section#contact .section-heading {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-   border-bottom: none;
+  border-bottom: none;
   /* 如果想要 hover 时加下划线，可加这一行 */
   /* transition: color 0.2s; */
 }
@@ -4076,6 +4080,29 @@ section#contact .section-heading {
 
 
 
+.contact-link-every-page-menu {
+  color: #000;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: none;
+}
+
+.contact-link-every-page-menu::after {
+  content: '↗';             /* 箭头符号 */
+  display: inline-block;
+  margin-left: 0.5em;       /* 文字和箭头之间的距离 */
+  font-size: 1.5em;         /* 箭头略大一些 */
+  color: #e91e63;           /* 箭头颜色，可换成任何你想要的 accent color */
+  transition: transform 0.2s; /* 可选：加个小动画 */
+}
+
+/* 可选：hover 效果，让箭头动一动 */
+.contact-link-every-page-menu:hover::after {
+  transform: translate(2px, -2px);
+}
 
 
 /* role-item section */
@@ -4802,4 +4829,124 @@ aside,
 .apply-link:hover i {
   transform: translateX(3px);
   transition: transform 0.2s ease-in-out;
+}
+
+
+
+/* for the every page bottom menu  */
+
+.every-page-each-button{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.every-page-each-button li {
+	display: flex;
+	align-items: center;
+	padding: 1.5rem 0; 
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.every-page-each-button li:last-child {
+  border-bottom: none;
+}
+
+
+.every-page-each-button .everyPageButton-number{
+	flex: 0 0 auto;
+	margin-right: 2.5rem;
+	font-size: 1.5rem;
+	color: rgba(0,0,0,0.6);
+	min-width: 3ch;
+	text-align: right;
+}
+
+
+ 
+
+
+.every-page-each-button .everyPageButton-title{
+  color: #000;
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: none;
+
+}
+
+.every-page-each-button .everyPageButton-title:hover {
+   transform: scale(1.1);  
+}
+
+
+
+.everyPage-left-area{
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+
+.everyPageLogo-name{
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  font-weight: 500;
+  margin: 0;
+  color: #000;
+}
+
+
+.newsletter-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  color: #000;
+}
+
+.newsletter-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  gap: 0.5rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 999px 0 0 999px;
+}
+
+.newsletter-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: #6e5cff;
+  color: #fff;
+  border-radius: 0 999px 999px 0;
+  cursor: pointer;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-us {
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
