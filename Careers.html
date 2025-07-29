@@ -18,21 +18,46 @@
 	<body class="is-preload">
 
 		<header class="site-header">
-			<div class="inner">
- 				<a href="index.html" class="site-logo">
-					<img src="assets/css/images/Logo.png" alt="Foundation Logo">
-				</a>
- 				<nav class="site-nav">
-					<ul>
-						<li><a href="Fundational_data.html"> Foundational Data</a></li>
-						<li><a href="Master_plan.html" >Master Plan</a></li>
-						<li><a href="Culture.html" >Culture</a></li>
-						<li><a href="Careers.html" >Careers</a></li>
+				<div class="inner">
+ 					<a href="index.html" class="site-logo">
+						<img src="assets/css/images/Logo.png" alt="Foundation Logo">
+					</a>
+ 					<!-- <nav class="site-nav">
+						<ul>
+							<li><a href="Fundational_data.html"> Foundational Data</a></li>
+							<li><a href="Master_plan.html" >Master Plan</a></li>
+							<li><a href="Culture.html" >Culture</a></li>
+							<li><a href="Careers.html" >Careers</a></li>
+						</ul>
+					</nav> -->
 
+					 <!-- 汉堡按钮，窄屏时可见 -->
+					<button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+						<span></span><span></span><span></span>
+					</button>
+
+					<!-- 桌面版导航 -->
+					<nav class="site-nav">
+					<ul>
+						<li><a href="Fundational_data.html">Foundational Data</a></li>
+						<li><a href="Master_plan.html">Master Plan</a></li>
+						<li><a href="Culture.html">Culture</a></li>
+						<li><a href="Careers.html">Careers</a></li>
+					</ul>
+					</nav>
+				</div>
+
+				<!-- 移动版全屏菜单 -->
+				<nav class="mobile-nav" id="mobileNav">
+					<ul>
+					<li><a href="Fundational_data.html">Foundational Data</a></li>
+					<li><a href="Master_plan.html">Master Plan</a></li>
+					<li><a href="Culture.html">Culture</a></li>
+					<li><a href="Careers.html">Careers</a></li>
 					</ul>
 				</nav>
-			</div>
-		</header>
+
+			</header>
 
  
 		<!-- Four -->
@@ -521,6 +546,24 @@
 					location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 					panel.classList.remove('open');
 				});
+			</script>
+
+
+			<script>
+				const hamBtn   = document.getElementById('hamburgerBtn');
+				const mobileNav = document.getElementById('mobileNav');
+
+				hamBtn.addEventListener('click', () => {
+ 					hamBtn.classList.toggle('open');
+					mobileNav.classList.toggle('open');
+				});
+
+ 				mobileNav.querySelectorAll('a').forEach(a =>
+					a.addEventListener('click', () => {
+					hamBtn.classList.remove('open');
+					mobileNav.classList.remove('open');
+					})
+				);
 			</script>
 			
 

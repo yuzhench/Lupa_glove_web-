@@ -5072,3 +5072,63 @@ aside,
   display: block;    /* 保证 img 是块级元素，margin 生效 */
   margin-top: 100px;  /* 根据需要调整数值 */
 }
+
+
+
+
+
+
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.5rem;
+  width: 2rem;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 1px;
+}
+
+/* 2) 移动菜单（默认隐藏） */
+.mobile-nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+  z-index: 3000;
+}
+.mobile-nav ul {
+  list-style: none;
+  padding: 2rem;
+}
+.mobile-nav li + li { margin-top: 1.5rem; }
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  display: block;
+}
+
+/* 3) 窄屏时切换：隐藏桌面 nav，显示汉堡 */
+@media (max-width: 768px) {
+  .site-nav { display: none; }
+  .hamburger { display: flex; }
+
+  /* 汉堡打开态的小动画（可选） */
+  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  /* 打开移动菜单 */
+  .mobile-nav.open { transform: translateX(0); }
+}
