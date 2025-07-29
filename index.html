@@ -215,7 +215,37 @@
 								</form> -->
 
 								 
-								<a href="index.html" class="contact-link-every-page-menu">Contact Us</a>  <!--TODO: finish this page-->
+								<a href="#"  class="contact-link-every-page-menu open-contact">Contact Us</a>  
+
+								<div id="contactPanel" class="contact-panel">
+									<div class="contact-overlay" id="closeContact"></div>
+									<div class="contact-dialog">
+										<button class="close-btn" id="closeContactBtn">&times;</button>
+										<h2>WHAT'S ON YOUR MIND?</h2>
+										<p>We'll get back to you as soon as possible.</p>
+										<label>
+											First Name*<br/>
+											<input type="text" id="firstName" placeholder="First Name">
+										</label>
+										<label>
+											Last Name*<br/>
+											<input type="text" id="lastName" placeholder="Last Name">
+										</label>
+										<label>
+											Email*<br/>
+											<input type="email" id="email" placeholder="Email">
+										</label>
+										<label>
+											Subject*<br/>
+											<input type="text" id="subject" placeholder="Subject">
+										</label>
+										<label>
+											Message*<br/>
+											<textarea id="message" rows="4" placeholder="Message"></textarea>
+										</label>
+										<button id="sendMail" class="submit-btn">Submit</button>
+									</div>
+								</div>
 								
 							</div>
 
@@ -632,7 +662,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 
 			<!-- Modal 结构 -->
-			<div id="emailModal" class="modal">
+			<!-- <div id="emailModal" class="modal">
 			<div class="overlay"></div>
 			<div class="dialog">
 				<span class="close-btn" id="closeModal">&times;</span>
@@ -647,12 +677,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				</div>
 				<button id="sendEmail" class="send-btn">Send</button>
 			</div>
-			</div>
+			</div> -->
 
 
 
 			<!-- Modal 控制脚本（放在 main.js 之后或者 body 底部） -->
-			<script>
+			<!-- <script>
 			const openBtn  = document.getElementById('openModal');
 			const modal    = document.getElementById('emailModal');
 			const closeBtn = document.getElementById('closeModal');
@@ -673,7 +703,49 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 				modal.style.display = 'none';
 			});
+			</script> -->
+
+
+
+			<script>
+			 
+				const openBtns  = document.querySelectorAll('.open-contact');
+				const panel     = document.getElementById('contactPanel');
+				const closeBtns = document.querySelectorAll('#closeContact, #closeContactBtn, .contact-overlay');
+				const sendBtn   = document.getElementById('sendMail');
+
+	
+				openBtns.forEach(btn =>
+					btn.addEventListener('click', e => {
+					e.preventDefault();
+					panel.classList.add('open');
+					})
+				);
+
+				 
+				closeBtns.forEach(btn =>
+					btn.addEventListener('click', () => panel.classList.remove('open'))
+				);
+ 
+				sendBtn.addEventListener('click', () => {
+					const to      = 'nureldinmohamed@college.harvard.edu'; 
+					const first   = encodeURIComponent(document.getElementById('firstName').value);
+					const last    = encodeURIComponent(document.getElementById('lastName').value);
+					const email   = encodeURIComponent(document.getElementById('email').value);
+					const subject = encodeURIComponent(document.getElementById('subject').value);
+					const body    = encodeURIComponent(
+					`From: ${first} ${last} <${email}>\n\n` +
+					document.getElementById('message').value
+					);
+					location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+					panel.classList.remove('open');
+				});
 			</script>
+
+
+
+
+			
 
 
 		<!-- Scripts -->
@@ -683,6 +755,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+
 			
 
 	</body>

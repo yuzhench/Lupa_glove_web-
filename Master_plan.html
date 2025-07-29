@@ -302,6 +302,11 @@
 								
 							</li>
 
+							
+							<span class="image fit"><img src="assets/css/images/time_line.png" alt="" /></span>
+
+
+
   
  
 								
@@ -825,7 +830,37 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								</form> -->
 
 								 
-								<a href="index.html" class="contact-link-every-page-menu">Contact Us</a>  <!--TODO: finish this page-->
+								<a href="# " class="contact-link-every-page-menu  open-contact ">Contact Us</a>  <!--TODO: finish this page-->
+
+								<div id="contactPanel" class="contact-panel">
+									<div class="contact-overlay" id="closeContact"></div>
+									<div class="contact-dialog">
+										<button class="close-btn" id="closeContactBtn">&times;</button>
+										<h2>WHAT'S ON YOUR MIND?</h2>
+										<p>We'll get back to you as soon as possible.</p>
+										<label>
+											First Name*<br/>
+											<input type="text" id="firstName" placeholder="First Name">
+										</label>
+										<label>
+											Last Name*<br/>
+											<input type="text" id="lastName" placeholder="Last Name">
+										</label>
+										<label>
+											Email*<br/>
+											<input type="email" id="email" placeholder="Email">
+										</label>
+										<label>
+											Subject*<br/>
+											<input type="text" id="subject" placeholder="Subject">
+										</label>
+										<label>
+											Message*<br/>
+											<textarea id="message" rows="4" placeholder="Message"></textarea>
+										</label>
+										<button id="sendMail" class="submit-btn">Submit</button>
+									</div>
+								</div>
 								
 							</div>
 
@@ -891,7 +926,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		 </section>
 
 
-		 
+
 		<section id="footer">
 			<div class="container">
 				<ul class="icons">
@@ -945,6 +980,41 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						icon.classList.replace('fa-minus', 'fa-plus');
 					}
 					});
+				});
+			</script>
+
+			<script>
+			 
+				const openBtns  = document.querySelectorAll('.open-contact');
+				const panel     = document.getElementById('contactPanel');
+				const closeBtns = document.querySelectorAll('#closeContact, #closeContactBtn, .contact-overlay');
+				const sendBtn   = document.getElementById('sendMail');
+
+	
+				openBtns.forEach(btn =>
+					btn.addEventListener('click', e => {
+					e.preventDefault();
+					panel.classList.add('open');
+					})
+				);
+
+				 
+				closeBtns.forEach(btn =>
+					btn.addEventListener('click', () => panel.classList.remove('open'))
+				);
+ 
+				sendBtn.addEventListener('click', () => {
+					const to      = 'nureldinmohamed@college.harvard.edu'; 
+					const first   = encodeURIComponent(document.getElementById('firstName').value);
+					const last    = encodeURIComponent(document.getElementById('lastName').value);
+					const email   = encodeURIComponent(document.getElementById('email').value);
+					const subject = encodeURIComponent(document.getElementById('subject').value);
+					const body    = encodeURIComponent(
+					`From: ${first} ${last} <${email}>\n\n` +
+					document.getElementById('message').value
+					);
+					location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+					panel.classList.remove('open');
 				});
 			</script>
 

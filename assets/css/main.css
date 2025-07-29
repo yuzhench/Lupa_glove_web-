@@ -4950,3 +4950,119 @@ aside,
   align-items: center;
   gap: 0.5rem;
 }
+
+
+
+
+
+
+/* 按钮样式保持不变 */
+.contact-button {
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  background: #6c63ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background .2s;
+}
+.contact-button:hover {
+  background: #5952cc;
+}
+
+/* —— 整个面板 —— */
+/* 默认隐藏 */
+.contact-panel {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1000;
+}
+/* 打开时显示 */
+.contact-panel.open {
+  display: block;
+}
+
+/* —— 半透明遮罩 —— */
+/* 默认隐藏 */
+.contact-overlay {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+/* 打开时显示并可点击 */
+.contact-panel.open .contact-overlay {
+  display: block;
+  cursor: pointer;
+}
+
+/* —— 滑出对话框 —— */
+.contact-dialog {
+  position: absolute;
+  top: 0; right: 0;
+  width: 350px; height: 100%;
+  background: #faf9f3;
+  padding: 2em;
+  box-sizing: border-box;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  overflow-y: auto;
+}
+/* 打开时滑入 */
+.contact-panel.open .contact-dialog {
+  transform: translateX(0);
+}
+
+/* —— 关闭按钮 —— */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;     /* 距离对话框顶部 0.5rem */
+  right: 0.5rem;   /* 距离对话框右侧 0.5rem */
+  width: 1.5rem;   /* 按钮宽度 */
+  height: 1.5rem;  /* 按钮高度 */
+  padding: 0;      /* 去掉内边距 */
+  line-height: 1.5rem; /* 让“×”垂直居中 */
+  font-size: 1rem; /* 字号改小 */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;     /* 根据背景调整颜色 */
+}
+
+/* —— 表单元素排版 —— */
+.contact-dialog label {
+  display: block;
+  margin: 1em 0 0.5em;
+  font-size: 0.9em;
+}
+.contact-dialog input,
+.contact-dialog textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.contact-dialog h2{
+	color: #000;
+}
+
+.contact-dialog p{
+	color: #000;
+}
+
+.submit-btn {
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  background: #6c63ff;
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background .2s;
+}
+.submit-btn:hover {
+  background: #5952cc;
+}
