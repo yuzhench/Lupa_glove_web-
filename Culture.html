@@ -48,11 +48,12 @@
 
 				<!-- 移动版全屏菜单 -->
 				<nav class="mobile-nav" id="mobileNav">
+					<button class="mobile-close" id="closeMobileNav" aria-label="Close menu">&times;</button>
 					<ul>
-					<li><a href="Fundational_data.html">Foundational Data</a></li>
-					<li><a href="Master_plan.html">Master Plan</a></li>
-					<li><a href="Culture.html">Culture</a></li>
-					<li><a href="Careers.html">Careers</a></li>
+						<li><a href="Fundational_data.html">Foundational Data</a></li>
+						<li><a href="Master_plan.html">Master Plan</a></li>
+						<li><a href="Culture.html">Culture</a></li>
+						<li><a href="Careers.html">Careers</a></li>
 					</ul>
 				</nav>
 
@@ -423,21 +424,12 @@
 								<p class="newsletter-subtitle">
 									Get news, photos, events, and business updates
 								</p>
-								<!-- <form class="newsletter-form">
-									<input
-									type="email"
-									class="newsletter-input"
-									placeholder="Email Address*"
-									required
-									/>
-									<button type="submit" class="newsletter-button">
-									Sign Up
-									</button>
-								</form> -->
+							 
 
 								 
-								<a href="#" class="contact-link-every-page-menu open-contact">Contact Us</a>   
-								<div id="contactPanel" class="contact-panel">
+								<a href="#"  class="contact-link-every-page-menu open-contact">Contact Us</a>  
+
+								<!-- <div id="contactPanel" class="contact-panel">
 									<div class="contact-overlay" id="closeContact"></div>
 									<div class="contact-dialog">
 										<button class="close-btn" id="closeContactBtn">&times;</button>
@@ -464,6 +456,92 @@
 											<textarea id="message" rows="4" placeholder="Message"></textarea>
 										</label>
 										<button id="sendMail" class="submit-btn">Submit</button>
+									</div>
+								</div> -->
+
+
+								<div id="contactPanel" class="contact-panel">
+									<div class="contact-overlay" id="closeContact"></div>
+									<div class="contact-dialog">
+										<button class="close-btn" id="closeContactBtn">&times;</button>
+										<h2>WHAT'S ON YOUR MIND?</h2>
+										<p>We'll get back to you as soon as possible.</p>
+
+ 										<form
+										action="https://docs.google.com/forms/d/1cRUkl9FZp_6mOtaCLOQ781o3aFAEruh4hf8Kh968Z2w/formResponse"
+										method="POST"
+										target="hidden_iframe"
+										>
+ 										<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+ 										<input type="hidden" name="fvv" value="1">
+										<input
+											type="hidden"
+											name="partialResponse"
+											value="[null,null,&quot;8239256771224832019&quot;]"
+										>
+										<input type="hidden" name="pageHistory" value="0">
+										<input type="hidden" name="fbzx" value="8239256771224832019">
+										<input type="hidden" name="submissionTimestamp" value="-1">
+
+ 									 
+
+										<label>
+											First Name*<br>
+											<input 
+											type="text"
+											id="lastName"
+											name="entry.316992883"
+											required
+											>
+										</label><br>
+
+										<!-- …按同样方式把 Email、Subject、Message …都写上 entry.xxx … -->
+										 <label>
+											Last name*<br>
+											<input 
+											type="text"
+											id="firstName"
+											name="entry.961751382"     
+											required
+											>
+										</label><br>
+
+										<label>
+											Email*<br>
+											<input 
+											type="text"
+											id="lastName"
+											name="entry.57194714"
+											required
+											>
+										</label><br>
+
+
+										<label>
+											Subject*<br>
+											<input 
+											type="text"
+											id="lastName"
+											name="entry.704521683"
+											required
+											>
+										</label><br>
+
+										<label>
+											Message*<br>
+											<input 
+											type="text"
+											id="lastName"
+											name="entry.861010228"
+											required
+											>
+										</label><br>
+
+
+
+										<button type="submit" class="submit-btn">Submit</button>
+										</form>
 									</div>
 								</div>
 								
@@ -541,7 +619,7 @@
 						<li>
  							<p class="footer-note">© Lupa Laboratories, Inc. 2025</p>
 
- 							<a href="#" class="icon brands alt fa-linkedin-in">
+ 							<a href="https://www.linkedin.com/in/edmond-d-19738625b/" class="icon brands alt fa-linkedin-in">
 								<span class="label">LinkedIn</span>
 							</a>
 
@@ -656,6 +734,8 @@
 			<script>
 				const hamBtn   = document.getElementById('hamburgerBtn');
 				const mobileNav = document.getElementById('mobileNav');
+				const closeNav   = document.getElementById('closeMobileNav');
+
 
 				hamBtn.addEventListener('click', () => {
  					hamBtn.classList.toggle('open');
@@ -668,6 +748,11 @@
 					mobileNav.classList.remove('open');
 					})
 				);
+
+				closeNav.addEventListener('click', () => {
+					hamBtn.classList.remove('open');
+					mobileNav.classList.remove('open');
+				})
 			</script>
 			
 

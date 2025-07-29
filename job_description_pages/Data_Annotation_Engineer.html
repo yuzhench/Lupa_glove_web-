@@ -19,20 +19,37 @@
 
 
         <header class="site-header">
-            <div class="inner">
-                 <a href="../index.html" class="site-logo">
-                    <img src="../assets/css/images/Logo.png" alt="Foundation Logo">
-                </a>
-                 <nav class="site-nav">
-                    <ul>
-                        <li><a href="../Fundational_data.html"> Foundational Data</a></li>
-                        <li><a href="../Master_plan.html" >Master Plan</a></li>
-                        <li><a href="../Culture.html" >Culture</a></li>
-                        <li><a href="../Careers.html" >Careers</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+				<div class="inner">
+ 					<a href="../index.html" class="site-logo">
+						<img src="../assets/css/images/Logo.png" alt="Foundation Logo">
+					</a>
+ 					 
+
+ 					<button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+						<span></span><span></span><span></span>
+					</button>
+
+ 					<nav class="site-nav">
+					<ul>
+						<li><a href="../Fundational_data.html">Foundational Data</a></li>
+						<li><a href="../Master_plan.html">Master Plan</a></li>
+						<li><a href="../Culture.html">Culture</a></li>
+						<li><a href="../Careers.html">Careers</a></li>
+					</ul>
+					</nav>
+				</div>
+
+ 				<nav class="mobile-nav" id="mobileNav">
+					<button class="mobile-close" id="closeMobileNav" aria-label="Close menu">&times;</button>
+					<ul>
+						<li><a href="../Fundational_data.html">Foundational Data</a></li>
+						<li><a href="../Master_plan.html">Master Plan</a></li>
+						<li><a href="../Culture.html">Culture</a></li>
+						<li><a href="../Careers.html">Careers</a></li>
+					</ul>
+				</nav>
+
+			</header>
 
         
 		<!-- Four -->
@@ -180,20 +197,27 @@
                                 <h1>Apply for this job</h1>
 
                                 <form
-                                    action="https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse"
+                                    action="https://docs.google.com/forms/d/1aC0U0h_JeCnbh7swNG87MJXyEtDFm5F3WcQzH_XSxqc/formResponse"
                                     method="POST"
                                     target="hidden_iframe"
                                     onsubmit="submitted=true;"
                                 >
-                                     
+
                                     <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+
+                                    <input type="hidden" name="fvv" value="1">
+                                    <input type="hidden" name="partialResponse" value="[null,null,&quot;-8358740693943005464&quot;]">
+                                    <input type="hidden" name="pageHistory" value="0">
+                                    <input type="hidden" name="fbzx" value="-8358740693943005464">
+                                    <input type="hidden" name="submissionTimestamp" value="-1">
 
                                     <div class="form-group">
                                         <label for="firstName">First name *</label>
                                         <input
                                             type="text"
                                             id="firstName"
-                                            name="entry.1111111111"
+                                            name="entry.1235656038"
                                             required
                                         />
                                     </div>
@@ -203,7 +227,7 @@
                                             <input
                                                 type="text"
                                                 id="lastName"
-                                                name="entry.2222222222"
+                                                name="entry.516424878"
                                                 required
                                             />
                                     </div>
@@ -212,9 +236,9 @@
                                     <div class="form-group">
                                         <label for="email">Email *</label>
                                         <input
-                                            type="email"
+                                            type="text"
                                             id="email"
-                                            name="entry.3333333333"
+                                            name="entry.593541462"
                                             required
                                         />
                                     </div>
@@ -223,9 +247,9 @@
                                     <div class="form-group">
                                         <label for="phone">Phone *</label>
                                         <input
-                                            type="tel"
+                                            type="text"
                                             id="phone"
-                                            name="entry.4444444444"
+                                            name="entry.1818973404"
                                             required
                                         />
                                     </div>
@@ -233,11 +257,11 @@
 
 
                                     <div class="form-group">
-                                        <label for="resume">Resume/CV *</label>
+                                        <label for="resume">Resume/CV link*</label>
                                         <input
                                             type="text"
                                             id="resume"
-                                            name="entry.5555555555"
+                                            name="entry.254266958"
                                             placeholder="Upload link or file name"
                                             required
                                         />
@@ -247,9 +271,9 @@
                                     <div class="form-group">
                                         <label for="linkedin">LinkedIn</label>
                                         <input
-                                            type="url"
+                                            type="text"
                                             id="linkedin"
-                                            name="entry.6666666666"
+                                            name="entry.576080431"
                                         />
                                     </div>
 
@@ -258,9 +282,9 @@
                                     <div class="form-group">
                                         <label for="website">Website</label>
                                         <input
-                                            type="url"
+                                            type="text"
                                             id="website"
-                                            name="entry.7777777777"
+                                            name="entry.629505385"
                                         />
                                     </div>
 
@@ -269,7 +293,7 @@
                                         <label for="anythingElse">Anything Else to Add?</label>
                                         <textarea
                                             id="anythingElse"
-                                            name="entry.8888888888"
+                                            name="entry.505676119"
                                         ></textarea>
                                     </div>
 
@@ -324,7 +348,7 @@
                             <p class="footer-note">© Lupa Laboratories, Inc. 2025</p>
 
                             <!-- linked in -->
-                            <a href="#" class="icon brands alt fa-linkedin-in">
+                            <a href="https://www.linkedin.com/in/edmond-d-19738625b/" class="icon brands alt fa-linkedin-in">
                                 <span class="label">LinkedIn</span>
                             </a>
 
@@ -350,6 +374,30 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+
+            <script>
+				const hamBtn   = document.getElementById('hamburgerBtn');
+				const mobileNav = document.getElementById('mobileNav');
+				const closeNav   = document.getElementById('closeMobileNav');
+
+
+				hamBtn.addEventListener('click', () => {
+ 					hamBtn.classList.toggle('open');
+					mobileNav.classList.toggle('open');
+				});
+
+ 				mobileNav.querySelectorAll('a').forEach(a =>
+					a.addEventListener('click', () => {
+					hamBtn.classList.remove('open');
+					mobileNav.classList.remove('open');
+					})
+				);
+
+				closeNav.addEventListener('click', () => {
+					hamBtn.classList.remove('open');
+					mobileNav.classList.remove('open');
+				})
+			</script>
 			
 
 	</body>

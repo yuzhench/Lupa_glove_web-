@@ -5132,3 +5132,26 @@ aside,
   /* 打开移动菜单 */
   .mobile-nav.open { transform: translateX(0); }
 }
+
+
+
+/* 关闭按钮样式 */
+.mobile-nav .mobile-close {
+  position: absolute;
+  top: 1.5rem;     /* 距离对话框顶部 0.5rem */
+  right: 1.5rem;   /* 距离对话框右侧 0.5rem */
+  width: 3rem;   /* 按钮宽度 */
+  height: 3rem;  /* 按钮高度 */
+  padding: 0;      /* 去掉内边距 */
+  line-height: 1.5rem; /* 让“×”垂直居中 */
+  font-size: 1rem; /* 字号改小 */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;     /* 根据背景调整颜色 */
+}
+
+/* （可选）给关闭按钮一点 hover 效果 */
+.mobile-nav .mobile-close:hover {
+  color: #ccc;
+}
