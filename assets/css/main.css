@@ -2721,18 +2721,18 @@ input, select, textarea {
 		display: flex;            /* 1. 变成弹性盒子 */
 		justify-content: space-between; /* 子元素一头一尾 */
 		align-items: center;      /* 垂直居中 */
-		padding: 0 2.5em;         /* 整体左右内边距，可调 */
+		padding: 0 0em;         /* 整体左右内边距，可调 */
 		margin: 0;                 /* 清除默认外边距 */
 	}
 
 	ul.icons li .footer-note {
 		margin: 0;                /* 清除 p 的默认上下外边距 */
-		font-size: 1.5em;        /* 缩小字体 */
+		font-size: 0.7em;        /* 缩小字体 */
 		color: #aaa;              /* 根据背景调整 */
 	}
 
 	ul.icons li a.icon:before {
-		font-size: 2em;         /* 保留你原来的图标大小 */
+		font-size: 1em;         /*size of the linkedin*/
 	}
 
 
